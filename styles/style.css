@@ -1,34 +1,39 @@
-    .mceButtonLink {
-      background-color:#e4778d;
-      border-radius:50px;
-      border:3px solid #ffffff;
-      color:#000000;
-      display:block;
-      font-family:'Marcellus', serif;
-      font-size:20px;
-      font-weight:bold;
-      font-style:normal;
-      padding:16px 28px;
-      text-decoration:none;
-      text-align:center;
-      letter-spacing:4px;
-      cursor:pointer;
-      width: fit-content;
-      margin: 20px auto;
-    }
-    #carruselFotos {
-      display: none; /* Oculto por defecto */
-      margin-top: 30px;
-    }
-    /* Ajuste de imágenes del carrusel */
-    .carousel-item img {
-      width: 100%;
-      max-height: 400px; /* Ajusta la altura máxima */
-      object-fit: cover; /* Recorta sin deformar */
-    }
+.mceButtonLink {
+  background-color:#e4778d;
+  border-radius:50px;
+  border:3px solid #ffffff;
+  color:#000000;
+  display:block;
+  font-family:'Marcellus', serif;
+  font-size:20px;
+  font-weight:bold;
+  font-style:normal;
+  padding:16px 28px;
+  text-decoration:none;
+  text-align:center;
+  letter-spacing:4px;
+  cursor:pointer;
+  width: fit-content;
+  margin: 20px auto;
+}
 
-    @media (max-width: 576px) {
-      .carousel-item img {
-        max-height: 250px; /* Menor altura en celulares */
-      }
-    }
+#carruselFotos {
+  display: none; /* Oculto por defecto */
+  margin-top: 30px;
+}
+
+/* Ajuste de imágenes del carrusel */
+.carousel-item img {
+  width: 100%;        /* Siempre ocupa el ancho disponible */
+  height: auto;       /* Mantiene proporción */
+  max-height: 400px;  /* Altura máxima en escritorio */
+  object-fit: cover;  /* Recorta sin deformar */
+  border-radius: 10px; /* Opcional: esquinas redondeadas */
+}
+
+/* Responsivo para celulares */
+@media (max-width: 576px) {
+  .carousel-item img {
+    max-height: 250px; /* Altura menor en móvil */
+  }
+}
