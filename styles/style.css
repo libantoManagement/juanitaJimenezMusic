@@ -22,28 +22,27 @@
   margin-top: 30px;
 }
 
-/* Forzamos un área fija para el carrusel */
-.carousel-inner {
-  width: 100%;
-  height: 400px;   /* altura fija en escritorio */
-}
-
+/* El área del carrusel tendrá altura fija */
 .carousel-item {
-  width: 100%;
-  height: 100%;    /* cada item ocupa toda el área */
+  height: 400px;      /* altura en escritorio */
+  position: relative; /* necesario para controlar la imagen */
+  overflow: hidden;   /* evita que algo se salga */
 }
 
 .carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;    /* llena el área */
+  height: 100%;
   object-fit: cover; /* recorta sin deformar */
   border-radius: 10px;
 }
 
-/* Responsivo en celulares */
+/* Versión responsiva para móviles */
 @media (max-width: 576px) {
-  .carousel-inner {
-    height: 250px; /* menos alto en móvil */
+  .carousel-item {
+    height: 250px; /* más bajo en celular */
   }
 }
 
