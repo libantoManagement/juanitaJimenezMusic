@@ -203,12 +203,15 @@ Fotos Artista
 <script type="text/javascript"  src="/zCQqihd0IwhA9RrnxEJAZhpTBIg/V59VGrNwSLGcz6/MVcCElotIwc/TzEX/MwYxQ1MB"></script></body></html>
 <!--Prueba script-->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Al hacer clic en el botón se muestra el carrusel
-    document.getElementById("btnMostrarCarrusel").addEventListener("click", function(e) {
-      e.preventDefault(); // Evita que actúe como link
-      const carrusel = document.getElementById("carruselFotos");
-      carrusel.style.display = "block"; // Muestra el carrusel
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("btnMostrarCarrusel");
+    const carrusel = document.getElementById("carruselFotos");
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();              // evita que actúe como link
+      carrusel.style.display = "block"; // muestra el carrusel
+      btn.style.display = "none";       // oculta el botón
     });
-  </script>
+  });
+</script>
