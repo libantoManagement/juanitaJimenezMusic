@@ -1,48 +1,96 @@
+/* 🎀 BOTÓN CON DISEÑO */
 .mceButtonLink {
-  background-color:#e4778d;
-  border-radius:50px;
-  border:3px solid #ffffff;
-  color:#000000;
-  display:block;
-  font-family:'Marcellus', serif;
-  font-size:20px;
-  font-weight:bold;
-  font-style:normal;
-  padding:16px 28px;
-  text-decoration:none;
-  text-align:center;
-  letter-spacing:4px;
-  cursor:pointer;
+  background-color: #e4778d;
+  border-radius: 50px;
+  border: 3px solid #ffffff;
+  color: #000000;
+  display: block;
+  font-family: 'Marcellus', serif;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  padding: 16px 28px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 4px;
+  cursor: pointer;
   width: fit-content;
   margin: 20px auto;
+  transition: all 0.3s ease-in-out;
 }
 
-#carruselFotos {
-  display: none; /* Oculto por defecto */
-  margin-top: 30px;
+.mceButtonLink:hover {
+  background-color: #d15b75;
+  color: #fff;
 }
 
-/* El área del carrusel tendrá altura fija */
-.carousel-item {
-  height: 400px;      /* altura en escritorio */
-  position: relative; /* necesario para controlar la imagen */
-  overflow: hidden;   /* evita que algo se salga */
+/* 🎡 CONTENEDOR DEL CARRUSEL (inicia oculto) */
+.carousel-container {
+  display: none; /* Se mostrará al dar clic */
+  max-width: 800px;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  background: transparent; /* 🔹 SIN COLOR DE FONDO */
 }
 
-.carousel-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* 🎞️ IMÁGENES DEL CARRUSEL */
+.carousel-slide {
+  display: flex;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* recorta sin deformar */
-  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* Versión responsiva para móviles */
-@media (max-width: 576px) {
-  .carousel-item {
-    height: 250px; /* más bajo en celular */
+.carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* Mantiene proporción, recorta si es necesario */
+  border-radius: 0;
+}
+
+/* ⬅️➡️ BOTONES DE NAVEGACIÓN */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .carousel-slide img {
+    height: 250px;
+  }
+  .mceButtonLink {
+    font-size: 16px;
+    padding: 12px 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .carousel-slide img {
+    height: 200px;
+  }
+  .mceButtonLink {
+    font-size: 14px;
+    padding: 10px 16px;
+    letter-spacing: 2px;
+  }
+}
+
 
