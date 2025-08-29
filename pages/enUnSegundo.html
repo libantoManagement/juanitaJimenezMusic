@@ -209,9 +209,12 @@ Fotos Artista
     const carrusel = document.getElementById("carruselFotos");
 
     btn.addEventListener("click", function (e) {
-      e.preventDefault();              // evita que actúe como link
+      e.preventDefault();
       carrusel.style.display = "block"; // muestra el carrusel
       btn.style.display = "none";       // oculta el botón
+      // Reiniciar carrusel de Bootstrap para asegurar que funcione
+      const bsCarousel = new bootstrap.Carousel('#carouselExample');
     });
   });
 </script>
+
