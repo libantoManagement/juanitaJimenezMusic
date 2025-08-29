@@ -95,6 +95,8 @@
 
 #carruselFotos{
     background: none;
+    background-color: none;
+    display: none;
 }
 
 
